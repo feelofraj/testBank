@@ -1,0 +1,31 @@
+
+#bankicon
+{
+    
+  width:70px;
+    height:70px;
+    
+      background-color: azure;
+      margin-left: 230px;
+      
+      margin-bottom: -20px;
+ 
+}
+ #bankname
+{
+    font-size:30pt;
+    margin-left: 100px;
+    margin-top: -10px;
+} 
+#footer
+{
+    background-color:lightgrey;
+    text-align:center;
+    margin-left: 40px solid rgb(10, 230, 230);
+    margin-top:40px solid lightgrey;
+}
+#headernav
+{
+    
+    margin-block-end: auto;
+}

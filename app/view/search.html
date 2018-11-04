@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Search</title>
+</head>
+
+<body>
+   
+    <div class="col justify-content-end"></div>  
+        <input class="form-control-sm align-content-end" type="text" ng-model="searchTxt" placeholder="search">
+        
+    </div>
+    <!-- <input class="form-control-sm align-content-end" type="text" ng-model="searchTxt.t1" placeholder="search"> -->
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Transaction Type<i class="fas fa-caret-down ml-2" ng-click="order('type')"></i></th>
+                    <th>From Account<i class="fas fa-caret-down ml-2" ng-click="order('fromaccount')"></i></th>
+                    <th>To Account <i class="fas fa-caret-down ml-2" ng-click="order('toaccount')"></i></th>
+                    <th>Description<i class="fas fa-caret-down ml-2" ng-click="order('description')"></i></th>
+                    <th>Amount<i class="fas fa-caret-down ml-2" ng-click="order('amount')"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="case" ng-repeat="sdata in searchTransactionData " ng-if="searchData" >
+                    <td>{{sdata.type}}</td>
+                    <td>{{sdata.fromaccount}}</td>
+                    <td>{{sdata.toaccount}}</td>
+                    <td>{{sdata.description}}</td>
+                    <td>{{sdata.amount}}</td>
+                </tr>
+                <tr>
+                    <td class="case" colspan="5" ng-if="!searchData" >No Records found</td>
+                </tr>
+            </tbody>
+        </table>
+   
+
+</body>
+
+</html>

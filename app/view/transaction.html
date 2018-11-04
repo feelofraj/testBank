@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Transaction</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-striped table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th>From Account<i class="fas fa-caret-down ml-2" ng-click="order('fromaccount')"></i></th>
+                        <th>To Account<i class="fas fa-caret-down ml-2" ng-click="order('toaccount')"></i></th>
+                        <th>Amount<i class="fas fa-caret-down ml-2" ng-click="order('amount')"></i></th>
+                        <th>Transaction Type<i class="fas fa-caret-down ml-2" ng-click="order('type')"></i></th>
+                        <th>Description<i class="fas fa-caret-down ml-2" ng-click="order('description')"></i></th>
+                    </tr>
+                </thead>
+                <tbody class="table-data">
+                    <tr class="case" ng-repeat="tdata in transactionData " ng-if="transactData" >
+                        <td>{{tdata.fromaccount}}</td>
+                        <td>{{tdata.toaccount}}</td>
+                        <td>{{tdata.amount}}</td>
+                        <td>{{tdata.type}}</td>
+                        <td>{{tdata.description}}</td>
+                    </tr>
+                    <tr class="case" ng-if="!transactData">
+                        <td colspan="5" >No Records found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <table class="table  table-striped table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Make a Transaction</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-sm">
+                    <tr>
+                        <td>From Account</td>
+                        <td><select class="form-control-sm" ng-model="accountType">
+                                <option value="selected">Savings</option>
+                                <option>Current</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>To Account</label></td>
+                        <td><input class="input-group" type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Description</label></td>
+                        <td><input class="input-group" type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Amount</label></td>
+                        <td><input class="form-control-sm"  type="number" placeholder="0.00"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Transaction type</label></td>
+                        <td><select class="input-group" ng-model="accountType">
+                                <option value="selected">NEFT</option>
+                                <option>IMTS</option>
+                                <option>FTS</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-success">save</button></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

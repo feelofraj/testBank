@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test Bank</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <!-- <script src="http://code.angularjs.org/1.2.13/angular.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css' integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz' crossorigin='anonymous'>
+  
+   <script src="app.js"></script>
+  <script src="js/controller/homeController.js"></script>
+  <script src="js/controller/loginController.js"></script>
+  <script src="js/controller/searchController.js"></script>
+  <script src="js/controller/summaryController.js"></script>
+  <script src="js/controller/transactionController.js"></script>
+  <script src="js/service/commonService.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+  <div class="container-fluid" style="background-color:azure">
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-6">
+                  <div class="page-header">
+                    <div class="row"> <img id="bankicon" src="images/cap_icon.png"></div>
+                    <div class="row"><span id="bankname">Test Bank</span></div>
+                   
+                  </div> 
+        </div>
+        <div class="col-sm-6">
+          <nav class="navbar navbar-expand justify-content-end"  id="headernav" ng-if="menuShow">
+           <ul class="navbar-nav" >
+            <li class="nav-item"><a class="nav-link" ui-sref='about'>About us</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref='contact'>Contact us</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref='help'>Help</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref='logout'>Logout</a></li>
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-row " style="background-image: url(images/header.jfif);margin-bottom: 3px">
+      <div>
+        <p style="margin-inline-start: 500px;font-size: 40pt">Welcome to Test Bank</p>
+      </div>
+    </div>
+    <div class="d-flex flex-row h-4 mb-1">
+      <div class="col-sm-2" style="background-color:lightgreen;">
+        <div class="nav nav-pills flex-column" ng-if="menuShow">
+          <li class="nav-item"><a class="nav-link " ui-sref='summary'>Account Summary</a></li>
+          <li class="nav-item"><a class="nav-link" ui-sref='transaction'>Transaction</a></li>
+          <li class="nav-item"><a class="nav-link" ui-sref='search'>Search</a></li>
+          <li class="nav-item"><a class="nav-link" ui-sref='logout'>Logout</a></li>
+        </div>
+      </div>
+      <div class="h-4 col-sm-10 mb-1">
+        <div ui-view></div>
+      </div>
+    </div>
+    <footer class="d-flex flex-row mb-0">
+      <div class="col-sm-12" id="footer">
+        <span>Test Bank @2017</span>|
+        <span ui-sref='policy'>Privacy Policy</span>
+      </div>
+  </div>
+  </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Account Summary</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="d-flex flex-column">
+            <h1>Account Summary</h1>
+            <p>Account</p>
+        </div>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Account Number<i class="fas fa-caret-down ml-2" ng-click="order('accountNumber')"></i></th>
+                    <th>Account Type<i class="fas fa-caret-down ml-2" ng-click="order('accountType')"></i></th>
+                    <th>Branch<i class="fas fa-caret-down ml-2" ng-click="order('branch')"></i></th>
+                    <th>Name<i class="fas fa-caret-down ml-2" ng-click="order('name')"></i></th>
+                    <th>Currency<i class="fas fa-caret-down ml-2" ng-click="order('ccy')"></i></th>
+                    <th>Available Balance<i class="fas fa-caret-down ml-2" ng-click="order('availableBalance')"></i></th>
+                    <th>Transaction</th>
+                </tr>
+            </thead>
+
+            <tbody  class="table-data">
+                
+                <tr class="case"  ng-repeat="data in summaryData  " ng-if="sumData" > 
+                    <td>{{data.accountNumber}}</td>
+                    <td>{{data.accountType}}</td>
+                    <td>{{data.branch}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.ccy}}</td>
+                    <td>{{data.availableBalance}}</td>
+                    <td><a ui-sref="transaction">view</a></td>
+                </tr>
+                <tr class="case" ng-if="!sumData">
+                    <td colspan="7">No  Records found </td>
+                </tr>
+                <tr style="background-color:gray;text-align: center">
+                        <td colspan="7">Check your transaction <span><u><a ui-sref="transaction">click here</a></u></span></td>
+                </tr>
+         </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>

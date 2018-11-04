@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body ng-app="myApp">
+
+        <form class="form-group" style="font-size: 20px">
+            <div class="d-flex flex-column">
+                <p>Day to day Banking -Manage your account daily</p>
+                <p>Test bank experiences the new <span><b>TEST bank's digital services</b></span>from net banking to
+                    mobile
+                    banking</p>
+            </div>
+            <div class="d-flex flex-column">
+
+                <table class="table-borderless">
+                    <th class="table-header" style="font-size: 40px">Login</th>
+                    <tr>
+                        <td class="text-danger" ng-if="error" >Incorrect username or Password</td>
+                    </tr>
+                    <tr>
+                        <td><label>Username</label></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-group" type="text" ng-model="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input-group" type="password" ng-model="password" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><button class="btn btn-success mt-2" type="submit" ng-click="validate()">Login</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+<!--            
+            <input type="text" ng-model="temperInput" >
+            <button  class="btn btn-success ml-2" ng-click="soapCall()">soapCall</button> -->
+
+        </form>
+
+      
+
+</body>
+
+</html>
